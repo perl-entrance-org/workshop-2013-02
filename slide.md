@@ -12,11 +12,11 @@
 ## 前回の復習
 
 ## plenv
-    $ plenv list
+    $ plenv versions
     * 5.16.3
       system
 
-- `plenv list`とすることで、`5.16.3`が選択されているか確認しよう
+- `plenv versions`（plenvのバージョンが古い方は`plenv list`）とすることで、`5.16.3`が選択されているか確認しよう
 
 ## Hello, World!
     print "Hello, World!\n";
