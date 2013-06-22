@@ -1,4 +1,4 @@
-# Perl入学式
+# Perl入学式 #2
 
 ## 今日の流れ
 - 前回の復習
@@ -8,6 +8,10 @@
 - 四則演算
 - if, else文
 - for文, 配列
+
+## ハッシュタグ
+- #Perl入学式
+- #Perl入学式in大阪
 
 ## 前回の復習
 
@@ -217,7 +221,7 @@
 - 変数`$var`に`$array[0]`, `$array[1]` ... という値が代入されている
 
 ## 練習問題
-- 変数`$array`に1 - 100の数値を格納し, その配列の中身を`for`文を使って出力する`for.pl`を作成しよう
+- 変数`@array`に1 - 100の数値を格納し, その配列の中身を`for`文を使って出力する`for.pl`を作成しよう
 
 ## 最終問題
     my @array = ( 1 .. 100 );
@@ -228,7 +232,7 @@
 
 ## 復習問題
 
-- https://github.com/perl-entrance-org/workshop-2013-02/blob/master/practice.md
+- <https://github.com/perl-entrance-org/workshop-2013-02/blob/master/practice.md>
 
   - 今回の内容を復習することができる問題集です
   - ご不明な点があれば, 気軽にスタッフまでお尋ねください
