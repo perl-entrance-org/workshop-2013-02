@@ -9,10 +9,6 @@
 - if, else文
 - for文, 配列
 
-## ハッシュタグ
-- #Perl入学式
-- #Perl入学式in大阪
-
 ## 前回の復習
 
 ## plenv
@@ -177,6 +173,59 @@
 - 簡単な数当てゲーム `question.pl`を作成しよう
 - 端末から数字を一つ入力し, その数字が`$answer`と一致したら`OK`, `$answer`より大きければ`too big`, 小さければ`too small`と表示する
 
+## 文字列比較 1
+    eq  ==  equal
+    ne  !=  not equal
+    gt  >   greater than
+    ge  >=  greater equal
+    lt  <   less than
+    le  <=  less equal
+
+- 数値を比較する場合は`==`や`!=`を使ったが, 文字列を比較する場合は`eq`や`ne`といった演算子を使う
+
+## 文字列比較 2
+    #!/usr/bin/env perl
+    use strict;
+    use warnings;
+    my $hoge = 'hello';
+    if ( $hoge eq 'hello' ) {
+        print "OK";
+    }
+    else {
+        print "NG";
+    }
+
+- `5行目`では, `hello`という文字列と比較するので, `eq`を用いている
+
+## 練習問題
+    #!/usr/bin/env perl
+    use strict;
+    use warnings;
+    my $answer = 'perl'; # 好きな文字をいれる
+
+- 簡単な文字当てゲーム `question_word.pl`を作成しよう
+- 端末から文字列を一つ入力し, その文字列が`$answer`と一致したら`OK`, 外れたら`NG`と表示する
+
+## 関係演算子 1
+    && -> かつ
+    || -> または
+
+- `if文`で複雑な条件を扱いたいときに上記の`関係演算子`を用いる
+
+## 関係演算子 2
+    my $hoge = 64;
+    if ( $hoge > 0 && $hoge % 2 == 0 ) {
+        print "&&: OK\n";
+    }
+    if ( $hoge > 0 || $hoge % 2 == 1 ) {
+        print "||: OK\n";
+    }
+
+- `5行目` では,`64`が0より大きい`かつ`2で割った余りが0ならば真となる
+  - 条件の両方を満たせば真となる
+- `8行目` では,`64`が0より大きい`または`2で割った余りが1ならば真となる
+  - 条件のどちらかを満たせば真となる
+
 ## 配列 1
     #!/usr/bin/env perl
     use strict;
@@ -208,6 +257,14 @@
 - `()`を使うことで, 配列にをまとめて代入することができる
 - 連続する数字であれば, `a .. b`とすることで`a以上b以下`の値を配列に代入する
 
+## 配列 4
+    my @array1 = ( 5, 4, 3, 2, 1 );
+    my @array2 = ( 5 .. 1 ); # NG
+    my @array3 = reverse ( 1 .. 5 ); # OK
+
+- `@array1`のように連番を逆の順番で配列に格納したい場合は, `reverse`を使う
+- `@array2`のように書くと, `@array2`には空の要素が格納されるので注意しよう
+
 ## for ループ
     #!/usr/bin/env perl
     use strict;
@@ -220,15 +277,23 @@
 - 配列の中身を走査するのに, `for(each)`文がある
 - 変数`$var`に`$array[0]`, `$array[1]` ... という値が代入されている
 
+## for ループ ( C言語風 )
+    #!/usr/bin/env perl
+    use strict;
+    use warnings;
+    my @array = ( 1, "hoge", 3 );
+    for ( my $i = 0; $i < @array; $i++ ) {
+      print "$array[$i]\n";
+    }
+
+- `$i < @array` において `@array` は`スカラ`として評価される。その際の値は配列の要素数となるので, `3`と扱われる
+
 ## 練習問題
 - 変数`@array`に1 - 100の数値を格納し, その配列の中身を`for`文を使って出力する`for.pl`を作成しよう
 
 ## 最終問題
-    my @array = ( 1 .. 100 );
-
 - `FizzBuzz`問題にチャレンジ!!
-- 数字が`3`で割り切れるなら`Fizz`, `5`なら`Buzz`, `15`なら`FizzBuzz`, これら以外はその数字自身を出力する`fizzbuzz.pl`を作成しよう
-- 数字の範囲は1 - 100とし, 上記のように書くことで配列を作ることができる
+- 数字が`3`で割り切れるなら`Fizz`, `5`なら`Buzz`, 両方(`15`)で割り切れるなら`FizzBuzz`, これら以外はその数字自身を出力する`fizzbuzz.pl`を作成しよう
 
 ## 復習問題
 
